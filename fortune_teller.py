@@ -1,36 +1,38 @@
-name = "Sam"
-question = "Will I marry my crush?"
-answer = ""
 import random
-random_number = random.randint(1,9)
-# print(random_number)
-if random_number == 1:
-  answer = "Yes - definitely"
-elif random_number == 2:
-  answer = "It is decidedly so"
-elif random_number == 3:
-  answer = "Without a doubt"
-elif random_number == 4:
-  answer = "Reply hazy, try again"
-elif random_number == 5:
-  answer = "Ask again later"
-elif random_number == 6:
-  answer = "Better not tell you now"
-elif random_number == 7:
-  answer = "My sources say no"
-elif random_number == 8:
-  answer = "Outlook not so good"
-elif random_number == 9:
-  answer = "Very doubtful"
-else:
-  answer = "Error"
 
-if question == "":
-  print("Please ask your query")
-else:
-  if name == "":
-   print(f"Question: {question}")
-  else:
-   print(f"{name} asks: {question}")
-   
-  print("Magic 8-Ball's answer:" + answer)
+responses = [
+    "Yes - definitely",
+    "It is decidedly so",
+    "Without a doubt",
+    "Reply hazy, try again",
+    "Ask again later",
+    "Better not tell you now",
+    "My sources say no",
+    "Outlook not so good",
+    "Very doubtful"
+]
+
+def magic_8_ball():
+    name = input("Enter your name: ").strip()
+    question = input("Ask your question: ").strip()
+
+    if not question:
+        print("Please ask your query.")
+        return
+
+    answer = random.choice(responses)
+
+    if name:
+        print(f"{name} asks: {question}")
+    else:
+        print(f"Question: {question}")
+
+    print(f"Magic 8-Ball's answer: {answer}")
+
+if __name__ == "__main__":
+    while True:
+        magic_8_ball()
+        again = input("\nDo you want to ask another question? (yes/no): ").strip().lower()
+        if again != "yes":
+            print("Thanks for using the Magic 8-Ball!")
+            break
