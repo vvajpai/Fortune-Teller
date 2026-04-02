@@ -1,4 +1,4 @@
-# Fortune-Teller
+# Fortune-Teller (Fun Game)
 A simple Python program that simulates a Magic 8-Ball.  
 Ask any yes/no question, and the program gives a random answer.
 
